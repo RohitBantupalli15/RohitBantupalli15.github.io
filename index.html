@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Bantupalli · IIIT Sri City</title>
+  <meta name="description" content="Rohit Bantupalli, Ph.D. scholar at IIIT Sri City, researching quantum cryptography, post-quantum cryptography and quantum-secure V2X networks.">
+  <meta property="og:title" content="Rohit Bantupalli · Quantum-Secure Communication">
+  <meta property="og:description" content="Ph.D. scholar at IIIT Sri City working on quantum key distribution, post-quantum cryptography and quantum-secure V2X networks.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23141413'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-style='italic' text-anchor='middle' fill='%23ff4f12'%3E%CF%88%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#top">|ψ⟩ <span>rohit.bantupalli</span></a>
+  <nav>
+    <a href="#news">|news⟩</a>
+    <a href="#research">|research⟩</a>
+    <a href="#papers">|papers⟩</a>
+    <a href="#awards">|awards⟩</a>
+    <a href="#qkd">|qkd⟩</a>
+    <a href="#contact" class="hot">|contact⟩</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="meta"><span class="led"></span> Ph.D. Scholar · CSE · IIIT Sri City</p>
+
+      <h1 aria-label="Rohit Bantupalli">
+        <span class="scramble" data-text="Rohit">Rohit</span>
+        <span class="scramble it" data-text="Bantupalli">Bantupalli</span>
+      </h1>
+
+      <p class="lede">
+        I study how to keep communication secret <em>after</em> quantum computers arrive.
+        My work spans quantum key distribution, post-quantum cryptography and its hardware
+        implementations, and quantum-walk-based security for connected vehicles (V2X).
+        I also work on observability and self-healing for quantum-secure edge-cloud systems,
+        high-performance simulation of noisy quantum circuits, and DAG-based distributed ledgers.
+      </p>
+
+      <div class="links">
+        <a href="cv.pdf" target="_blank" rel="noopener">CV ↗</a>
+        <a href="https://scholar.google.com/citations?user=-FqDa3MAAAAJ&hl=en" target="_blank" rel="noopener">Scholar ↗</a>
+        <a href="https://github.com/RohitBantupalli15" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/rohit-bantupalli-629917219/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <p class="note">→ Try the qubit. Every button applies a real gate.</p>
+    </div>
+
+    <figure class="lab">
+      <div class="lab-head">
+        <span>FIG. 1 — single qubit on the Bloch sphere</span>
+        <span class="hint">drag to rotate</span>
+      </div>
+      <canvas id="bloch" aria-label="Interactive Bloch sphere showing a qubit state"></canvas>
+      <div class="gates" role="group" aria-label="Quantum gates">
+        <button data-g="H" title="Hadamard">H</button>
+        <button data-g="X" title="Pauli-X (NOT)">X</button>
+        <button data-g="Y" title="Pauli-Y">Y</button>
+        <button data-g="Z" title="Pauli-Z">Z</button>
+        <button data-g="S" title="Phase S">S</button>
+        <button data-g="T" title="π/8 T">T</button>
+        <button id="measure" class="m" title="Measure in Z basis">Measure</button>
+        <button id="reset" class="r" title="Reset to |0⟩">|0⟩</button>
+      </div>
+      <div class="readout">
+        <div><span class="k">α</span><span id="alpha">1</span></div>
+        <div><span class="k">β</span><span id="beta">0</span></div>
+        <div class="prob">
+          <span class="k">P(0)</span>
+          <span class="bar"><i id="pbar"></i></span>
+          <span id="p0">100%</span>
+        </div>
+        <div class="log" id="log">state prepared in |0⟩</div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>QKD</span><span>BB84</span><span>Post-Quantum Cryptography</span><span>Lattices</span><span>V2X Security</span><span>Quantum Walks</span><span>Edge-Cloud</span><span>Circuit Simulation</span>
+      <span>QKD</span><span>BB84</span><span>Post-Quantum Cryptography</span><span>Lattices</span><span>V2X Security</span><span>Quantum Walks</span><span>Edge-Cloud</span><span>Circuit Simulation</span>
+    </div>
+  </div>
+
+  <!-- ================= NEWS ================= -->
+  <section class="sec" id="news">
+    <div class="wire-head reveal"><span class="gate">X</span><h2>|news⟩</h2><span class="idx">01</span></div>
+    <ul class="news reveal">
+      <li class="up"><time>Dec 2026</time><span>Presenting our paper at <b>HiPC 2026</b> in Bengaluru, India, where it is one of six <b>Best Paper</b> nominees. <em class="soon">upcoming</em></span></li>
+      <li><time>Oct 2026</time><span>HiPC 2026 paper nominated for the <b>Best Paper Award</b> (one of six nominees).</span></li>
+      <li><time>Oct 2026</time><span>Paper on cross-layer observability for quantum-secure V2X accepted at <b>HiPC 2026</b> (59 of 234 submissions).</span></li>
+      <li><time>Aug 2026</time><span>Book chapter on hardware implementations of post-quantum cryptography accepted by <b>Springer</b>.</span></li>
+      <li><time>Jun 2026</time><span><i>QSVeCom</i> published in <b>Quantum Information Processing</b> (SCIE).</span></li>
+      <li><time>Jun 2026</time><span>Indian patent application on DAG-ledger-based automated toll collection <b>published</b>.</span></li>
+      <li><time>May 2026</time><span>Presented at the <b>Intel4EC Workshop, IEEE IPDPS 2026</b> in New Orleans, USA.</span></li>
+      <li><time>Dec 2025</time><span>Presented our paper on OpenMP-accelerated quantum simulation at <b>Supercomputing India 2025</b>.</span></li>
+      <li><time>Sep 2025</time><span>Book chapter on quantum key distribution published by <b>CRC Press</b>.</span></li>
+      <li><time>Aug 2024</time><span>Started my Ph.D. at IIIT Sri City.</span></li>
+    </ul>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section class="sec" id="research">
+    <div class="wire-head reveal"><span class="gate">H</span><h2>|research⟩</h2><span class="idx">02</span></div>
+    <p class="sec-intro reveal">My research, drawn as a circuit: four qubits, one gate per research thread.</p>
+
+    <div class="circuit">
+      <div class="qrow reveal">
+        <span class="q">q₀</span><span class="g">H</span>
+        <div class="qt"><h3>Quantum Cryptography</h3>
+          <p>Quantum key distribution protocols and how they hold up in real, lossy, multi-party networks, from point-to-point links to large networks.</p>
+          <div class="eqn"><span class="m"><i>r</i> ≥ 1 − 2<i>h</i>(<i>Q</i>)</span><span class="no">(1)</span></div>
+          <p class="eqn-note">Secret-key fraction for BB84 with one-way post-processing: a key survives only while the error rate <i>Q</i> stays below about 11%.</p></div>
+      </div>
+      <div class="qrow reveal">
+        <span class="q">q₁</span><span class="g ctrl">●</span>
+        <div class="qt"><h3>Post-Quantum Cryptography</h3>
+          <p>Lattice-based schemes, and hybrid QKD + PQC designs that stay secure even if one of the two layers is broken.</p></div>
+      </div>
+      <div class="qrow reveal">
+        <span class="q">q₂</span><span class="g">⊕</span>
+        <div class="qt"><h3>Quantum-Secure V2X</h3>
+          <p>Low-latency authentication and key exchange for connected vehicles, with observability and self-healing in edge-cloud systems.</p>
+          <div class="eqn"><span class="m">|ψ(<i>t</i>+1)⟩ = <i>S</i>(<i>C</i> <span class="op">⊗</span> <span class="op">𝟙</span>)|ψ(<i>t</i>)⟩</span><span class="no">(2)</span></div>
+          <p class="eqn-note">One step of a discrete-time quantum walk (coin <i>C</i>, then shift <i>S</i>), the building block behind QSVeCom.</p></div>
+      </div>
+      <div class="qrow reveal">
+        <span class="q">q₃</span><span class="g meter"><svg viewBox="0 0 24 16" width="22"><path d="M3 13a9 9 0 0 1 18 0" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 13 17 4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        <div class="qt"><h3>Quantum Circuit Simulation</h3>
+          <p>Simulating quantum protocols and noisy circuits, and speeding up simulation with parallel computing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAPERS ================= -->
+  <section class="sec" id="papers">
+    <div class="wire-head reveal"><span class="gate">S</span><h2>|papers⟩</h2><span class="idx">03</span></div>
+
+    <div class="papers">
+      <!-- Copy an <article class="paper"> block for each new paper. "bibtex" shows and copies the <pre class="bib"> -->
+      <article class="paper reveal">
+        <span class="pk">|p₁⟩</span>
+        <div>
+          <span class="ptype t-conference">Conference</span><span class="pstatus">Accepted Oct 2026 · to appear Dec 2026</span> <span class="award-badge">★ Best Paper Nominee</span>
+          <h3>Scalable Multi Telemetry Cross Layer Observability for Quantum Secure V2X Networks</h3>
+          <p class="authors"><b>R. Bantupalli</b>, B. Halavar, K. Sutradhar</p>
+          <p class="vline"><span class="vname">HiPC 2026: IEEE International Conference on High Performance Computing, Data, and Analytics, Bengaluru, India</span><span class="publisher">IEEE</span></p>
+          <p class="venue">59 of 234 submissions accepted</p>
+          <p class="plinks"><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@inproceedings{bantupalli2026hipc,
+  title     = {Scalable Multi Telemetry Cross Layer Observability for Quantum Secure {V2X} Networks},
+  author    = {Bantupalli, Rohit and Halavar, Bheemappa and Sutradhar, Kartick},
+  booktitle = {IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC)},
+  year      = {2026},
+  note      = {To appear}
+}</pre>
+        </div>
+      </article>
+      <article class="paper reveal">
+        <span class="pk">|p₂⟩</span>
+        <div>
+          <span class="ptype t-journal">Journal</span><span class="pstatus">Jun 2026</span>
+          <h3><a class="ptitle" href="https://doi.org/10.1007/s11128-026-05260-8" target="_blank" rel="noopener">QSVeCom: Quantum Safe Vehicular Communication using Controlled Alternate Quantum Walks</a></h3>
+          <p class="authors"><b>R. Bantupalli</b>, B. Halavar, K. Sutradhar</p>
+          <p class="vline"><span class="vname">Quantum Information Processing</span><span class="publisher">Springer Nature</span><span class="publisher">SCIE</span></p>
+          <p class="venue">Vol. 25, No. 7, Article 234</p>
+          <p class="plinks"><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@article{bantupalli2026qsvecom,
+  title   = {{QSVeCom}: Quantum Safe Vehicular Communication using Controlled Alternate Quantum Walks},
+  author  = {Bantupalli, Rohit and Halavar, Bheemappa and Sutradhar, Kartick},
+  journal = {Quantum Information Processing},
+  volume  = {25},
+  number  = {7},
+  pages   = {234},
+  year    = {2026},
+  doi       = {10.1007/s11128-026-05260-8}
+}</pre>
+        </div>
+      </article>
+      <article class="paper reveal">
+        <span class="pk">|p₃⟩</span>
+        <div>
+          <span class="ptype t-workshop">Workshop</span><span class="pstatus">May 2026</span>
+          <h3><a class="ptitle" href="https://ieeexplore.ieee.org/abstract/document/11651891/" target="_blank" rel="noopener">Observability and Self-Healing of Quantum Secure V2X Communication in Edge-Cloud Systems</a></h3>
+          <p class="authors"><b>R. Bantupalli</b>, K. Sutradhar, B. Halavar</p>
+          <p class="vline"><span class="vname">Intel4EC Workshop at IEEE IPDPS 2026, New Orleans, USA</span><span class="publisher">IEEE</span></p>
+          <p class="venue">IEEE IPDPS Workshops (IPDPSW), pp. 514–517</p>
+          <p class="plinks"><a href="https://ieeexplore.ieee.org/abstract/document/11651891/" target="_blank" rel="noopener">ieee xplore</a><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@inproceedings{bantupalli2026ipdpsw,
+  title     = {Observability and Self-Healing of Quantum Secure {V2X} Communication in Edge-Cloud Systems},
+  author    = {Bantupalli, Rohit and Sutradhar, Kartick and Halavar, Bheemappa},
+  booktitle = {2026 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)},
+  pages     = {514--517},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/IPDPSW71298.2026.00087}
+}</pre>
+        </div>
+      </article>
+      <article class="paper reveal">
+        <span class="pk">|p₄⟩</span>
+        <div>
+          <span class="ptype t-chapter">Book chapter</span><span class="pstatus">Accepted Aug 2026 · in press</span>
+          <h3>Hardware Implementations of Post-Quantum Cryptography: FPGA, ASIC, and Accelerators</h3>
+          <p class="authors"><b>R. Bantupalli</b>, K. Sutradhar, B. Halavar</p>
+          <p class="vline"><span class="vname">Springer edited volume</span><span class="publisher">Springer</span></p>
+          <p class="venue">In press</p>
+          <p class="plinks"><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@incollection{bantupalli2026pqchw,
+  title     = {Hardware Implementations of Post-Quantum Cryptography: {FPGA}, {ASIC}, and Accelerators},
+  author    = {Bantupalli, Rohit and Sutradhar, Kartick and Halavar, Bheemappa},
+  publisher = {Springer},
+  note      = {In press}
+}</pre>
+        </div>
+      </article>
+      <article class="paper reveal">
+        <span class="pk">|p₅⟩</span>
+        <div>
+          <span class="ptype t-conference">Conference</span><span class="pstatus">Dec 2025</span>
+          <h3><a class="ptitle" href="https://ieeexplore.ieee.org/document/11333872/" target="_blank" rel="noopener">Accelerating Noise Error Calculation in Hardware Efficient Ansatz Circuits with OpenMP for Scalable Quantum Simulation</a></h3>
+          <p class="authors"><b>R. Bantupalli</b>, K. Sutradhar, B. Halavar</p>
+          <p class="vline"><span class="vname">Supercomputing India (SCI 2025), Bengaluru, India</span><span class="publisher">IEEE</span></p>
+          <p class="venue">pp. 1–7</p>
+          <p class="plinks"><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@inproceedings{bantupalli2025sci,
+  title     = {Accelerating Noise Error Calculation in Hardware Efficient Ansatz Circuits with {OpenMP} for Scalable Quantum Simulation},
+  author    = {Bantupalli, Rohit and Sutradhar, Kartick and Halavar, Bheemappa},
+  booktitle = {2025 Supercomputing India (SCI)},
+  pages     = {1--7},
+  year      = {2025},
+  doi       = {10.1109/SCI68648.2025.11333872}
+}</pre>
+        </div>
+      </article>
+      <article class="paper reveal">
+        <span class="pk">|p₆⟩</span>
+        <div>
+          <span class="ptype t-chapter">Book chapter</span><span class="pstatus">Sep 2025</span>
+          <h3><a class="ptitle" href="https://doi.org/10.1201/9781003597414-6" target="_blank" rel="noopener">Quantum Key Distribution (QKD) and Secure Communication in the Quantum Era</a></h3>
+          <p class="authors"><b>R. Bantupalli</b>, K. Sutradhar, B. Halavar</p>
+          <p class="vline"><span class="vname"><i>Quantum Algorithms for Enhancing Cybersecurity in Computational Intelligence in Healthcare</i></span><span class="publisher">CRC Press</span><span class="publisher">Taylor &amp; Francis</span></p>
+          <p class="venue">pp. 67–85</p>
+          <p class="plinks"><a href="https://doi.org/10.1201/9781003597414-6" target="_blank" rel="noopener">doi</a><button class="bibbtn" type="button">bibtex</button></p>
+          <pre class="bib" hidden>@incollection{bantupalli2025qkd,
+  title     = {Quantum Key Distribution ({QKD}) and Secure Communication in the Quantum Era},
+  author    = {Bantupalli, Rohit and Sutradhar, Kartick and Halavar, Bheemappa},
+  booktitle = {Quantum Algorithms for Enhancing Cybersecurity in Computational Intelligence in Healthcare},
+  pages     = {67--85},
+  publisher = {CRC Press},
+  year      = {2025},
+  doi       = {10.1201/9781003597414-6}
+}</pre>
+        </div>
+      </article>
+      <p class="papers-note reveal">Full list on <a href="https://scholar.google.com/citations?user=-FqDa3MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></p>
+    </div>
+  </section>
+
+  <!-- ================= AWARDS & PATENTS ================= -->
+  <section class="sec" id="awards">
+    <div class="wire-head reveal"><span class="gate">Y</span><h2>|awards⟩</h2><span class="idx">04</span></div>
+
+    <div class="honours">
+      <article class="honour reveal">
+        <span class="h-icon">★</span>
+        <div>
+          <span class="state">⟨award · Oct 2026⟩</span>
+          <h3>Best Paper Award Nominee, HiPC 2026</h3>
+          <p>One of six nominees, for “Scalable Multi Telemetry Cross Layer Observability for Quantum Secure V2X Networks”. The winner is chosen at the conference in December 2026.</p>
+        </div>
+      </article>
+      <article class="honour reveal">
+        <span class="h-icon">§</span>
+        <div>
+          <span class="state">⟨patent · Indian patent application · published Jun 2026⟩</span>
+          <h3>Automated Toll Collection System Using Directed Acyclic Graph-Based Ledger and Related Methods</h3>
+          <p>Inventors: <b>R. Bantupalli</b>, K. Sutradhar, B. Halavar</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= BB84 ================= -->
+  <section class="sec" id="qkd">
+    <div class="wire-head reveal"><span class="gate">⊕</span><h2>|qkd⟩</h2><span class="idx">05</span></div>
+    <p class="sec-intro reveal">
+      <b>Try BB84.</b> Alice sends polarised photons in random bases. Bob measures in random bases,
+      and they keep only the bits where their bases matched. Switch on Eve to see why eavesdropping
+      can't stay hidden: her measurements disturb the photons, and the error rate jumps.
+    </p>
+
+    <div class="bb-panel reveal">
+      <div class="lab-head"><span>FIG. 2 — BB84 key exchange with an optional intercept-resend attacker</span><span class="hint">24 photons</span></div>
+      <div class="bb-controls">
+        <button id="bbRun" class="run">▶ Send 24 photons</button>
+        <label class="switch"><input type="checkbox" id="eve"><span class="sl"></span> Eve intercepts</label>
+      </div>
+      <div class="bb-scroll"><table id="bbTable" class="bb"></table></div>
+      <div class="bb-result" id="bbResult">Press send to start a key exchange.</div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="sec" id="projects">
+    <div class="wire-head reveal"><span class="gate">T</span><h2>|projects⟩</h2><span class="idx">06</span></div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <span class="tag">simulation</span>
+        <h3>Scalable Quantum Simulation</h3>
+        <p>OpenMP-accelerated noise-error calculation for hardware-efficient ansatz circuits.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="sec" id="education">
+    <div class="wire-head reveal"><span class="gate">Rz</span><h2>|education⟩</h2><span class="idx">07</span></div>
+
+    <table class="record reveal">
+      <thead><tr><th>t</th><th>outcome</th><th>where</th></tr></thead>
+      <tbody>
+        <tr><td>2024 → now</td><td>Ph.D., Computer Science &amp; Engineering</td><td>IIIT Sri City<small>Supervisor Dr. Bheemappa Halavar · Co-supervisor Dr. Kartick Sutradhar</small></td></tr>
+        <tr><td>2020 → 2024</td><td>B.E., Computer Science &amp; Engineering</td><td>Saveetha School of Engineering, Chennai</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact reveal" id="contact">
+    <p class="meta">|contact⟩ · 08</p>
+    <h2>Let's get <em>entangled.</em></h2>
+    <p class="cx">I'm open to research collaborations and postdoctoral positions in quantum computing and quantum-secure communication.</p>
+    <a class="mail" href="mailto:rohit.b@iiits.in">rohit.b@iiits.in</a>
+    <p class="addr">Dept. of CSE · IIIT Sri City · Andhra Pradesh, India</p>
+  </section>
+
+</main>
+
+<footer>
+  <span>© <span id="year"></span> Rohit Bantupalli</span>
+  <span>last updated November 2026 · global phase ignored</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
