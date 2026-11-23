@@ -4,22 +4,39 @@
 const GLYPHS = "01|⟩⟨ψφ+−×↕↔";
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Each letter keeps its real width; a symbol flickers on top of it, so nothing shifts.
 function collapse(el, delay) {
   const final = el.dataset.text;
-  if (reduceMotion) { el.textContent = final; return; }
+  el.textContent = "";
+  const spans = [...final].map(ch => {
+    const s = document.createElement("span");
+    s.className = "ch scr";
+    s.textContent = ch;
+    s.dataset.g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+    el.appendChild(s);
+    return s;
+  });
+  el.classList.add("ready");
   let frame = -delay;
   const end = final.length * 3 + 14;
   (function tick() {
-    let out = "";
-    for (let i = 0; i < final.length; i++) {
-      if (frame >= i * 3 + 12) out += final[i];
-      else out += '<span class="flick">' + GLYPHS[(Math.random() * GLYPHS.length) | 0] + "</span>";
-    }
-    el.innerHTML = out;
-    if (++frame < end) requestAnimationFrame(tick); else el.textContent = final;
+    spans.forEach((s, i) => {
+      if (frame >= i * 3 + 12) s.classList.remove("scr");
+      else if (frame % 2 === 0) s.dataset.g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+    });
+    if (++frame < end) requestAnimationFrame(tick);   // letters stay in place when done
   })();
 }
-document.querySelectorAll(".scramble").forEach((el, i) => collapse(el, i * 10));
+function startName() {
+  if (startName.done) return; startName.done = true;
+  document.querySelectorAll(".scramble").forEach((el, i) => {
+    if (reduceMotion) { el.classList.add("ready"); return; }
+    collapse(el, i * 10);
+  });
+}
+// wait for the web fonts so the name doesn't re-render mid-animation (max 1.5 s)
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(startName);
+setTimeout(startName, 1500);
 
 /* =========================================================
    2. Interactive Bloch sphere (real single-qubit simulation)

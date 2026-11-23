@@ -81,7 +81,14 @@ h1 {
 }
 h1 .scramble { display: block; min-height: .9em; }
 h1 .it { font-style: italic; padding-left: .5em; }
-h1 .flick { color: var(--sig); font-family: var(--mono); font-size: .62em; font-style: normal; }
+h1 .scramble { white-space: nowrap; }
+h1 .ch { position: relative; display: inline-block; }
+h1 .ch.scr { color: transparent; }
+h1 .ch.scr::after { content: attr(data-g); position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+  text-align: center; color: var(--sig); font-family: var(--mono); font-size: .5em; font-style: normal; }
+/* with JS on, keep the name hidden until the fonts are ready, then the animation reveals it */
+.js h1 .scramble { visibility: hidden; }
+.js h1 .scramble.ready { visibility: visible; }
 
 .lede { font-size: 1.12rem; max-width: 48ch; color: var(--ink-2); }
 .lede em { font-family: var(--serif); font-size: 1.2em; color: var(--ink); }
